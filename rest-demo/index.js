@@ -4,7 +4,7 @@ const port = 3000;
 
 app.get("/greet", (req, res) => {
   const name = req.query.name || "World";
-  res.json({ message: `Hello, ${name}!` });
+  res.json({ message: `Hello, ${name}!`, weather: "Sunny", Time: Date.now() });
 });
 
 app.listen(port, () => {

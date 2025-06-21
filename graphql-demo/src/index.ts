@@ -1,14 +1,25 @@
 import { ApolloServer, gql } from "apollo-server";
 
 const typeDefs = gql`
+  type GreetResponse {
+    message: String!
+    weather: String!
+    time: String!
+  }
+
   type Query {
-    greet(name: String!): String!
+    greet(name: String!): GreetResponse!
   }
 `;
 
 const resolvers = {
   Query: {
-    greet: (_: any, args: { name: string }) => `Hello, ${args.name}!`,
+    greet: (_: any, args: { name: string }) => {
+      const message = `Hello, ${args.name}!`;
+      const weather = "Sunny"; // Placeholder, can be dynamic
+      const time = new Date().toLocaleString();
+      return { message, weather, time };
+    },
   },
 };
 
