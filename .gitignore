@@ -1,0 +1,53 @@
+# Global .gitignore for api-communication-styles-demo
+# Node.js
+node_modules/
+dist/
+.env
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+
+# Go
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Docker
+*.pid
+
+# Logs
+logs/
+*.log
+
+# VS Code
+.vscode/
+
+# Misc
+coverage/
+*.tgz
+.idea/
+*.swp
+*.swo
+
+# Ignore build artifacts
+build/
