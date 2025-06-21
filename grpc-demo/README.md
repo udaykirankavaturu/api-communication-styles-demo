@@ -50,13 +50,13 @@ go run server/main.go
 ### 5. Run the client (in a separate terminal)
 
 ```bash
-go run client/main.go Alice
+go run client/main.go Uday
 ```
 
 Expected output:
 
 ```
-Greeting: Hello Alice
+Greeting: Hello Uday
 ```
 
 ---
