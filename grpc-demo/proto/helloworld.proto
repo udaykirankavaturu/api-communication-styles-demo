@@ -14,3 +14,16 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+  repeated string tags = 4;
+  repeated PhoneNumber phones = 5;
+}
+
+message PhoneNumber {
+  string number = 1;
+  string type = 2;
+}

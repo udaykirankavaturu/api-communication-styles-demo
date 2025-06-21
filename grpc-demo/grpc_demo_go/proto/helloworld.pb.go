@@ -109,6 +109,134 @@ func (x *HelloReply) GetMessage() string {
 	return ""
 }
 
+type Person struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Id            int32                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	Tags          []string               `protobuf:"bytes,4,rep,name=tags,proto3" json:"tags,omitempty"`
+	Phones        []*PhoneNumber         `protobuf:"bytes,5,rep,name=phones,proto3" json:"phones,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Person) Reset() {
+	*x = Person{}
+	mi := &file_proto_helloworld_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Person) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Person) ProtoMessage() {}
+
+func (x *Person) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_helloworld_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Person.ProtoReflect.Descriptor instead.
+func (*Person) Descriptor() ([]byte, []int) {
+	return file_proto_helloworld_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *Person) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *Person) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *Person) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *Person) GetTags() []string {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
+func (x *Person) GetPhones() []*PhoneNumber {
+	if x != nil {
+		return x.Phones
+	}
+	return nil
+}
+
+type PhoneNumber struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Number        string                 `protobuf:"bytes,1,opt,name=number,proto3" json:"number,omitempty"`
+	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PhoneNumber) Reset() {
+	*x = PhoneNumber{}
+	mi := &file_proto_helloworld_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PhoneNumber) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PhoneNumber) ProtoMessage() {}
+
+func (x *PhoneNumber) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_helloworld_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PhoneNumber.ProtoReflect.Descriptor instead.
+func (*PhoneNumber) Descriptor() ([]byte, []int) {
+	return file_proto_helloworld_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *PhoneNumber) GetNumber() string {
+	if x != nil {
+		return x.Number
+	}
+	return ""
+}
+
+func (x *PhoneNumber) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
 var File_proto_helloworld_proto protoreflect.FileDescriptor
 
 const file_proto_helloworld_proto_rawDesc = "" +
@@ -119,7 +247,16 @@ const file_proto_helloworld_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"&\n" +
 	"\n" +
 	"HelloReply\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage2I\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"\x87\x01\n" +
+	"\x06Person\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12\x0e\n" +
+	"\x02id\x18\x02 \x01(\x05R\x02id\x12\x14\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email\x12\x12\n" +
+	"\x04tags\x18\x04 \x03(\tR\x04tags\x12/\n" +
+	"\x06phones\x18\x05 \x03(\v2\x17.helloworld.PhoneNumberR\x06phones\"9\n" +
+	"\vPhoneNumber\x12\x16\n" +
+	"\x06number\x18\x01 \x01(\tR\x06number\x12\x12\n" +
+	"\x04type\x18\x02 \x01(\tR\x04type2I\n" +
 	"\aGreeter\x12>\n" +
 	"\bSayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00B\x14Z\x12grpc_demo_go/protob\x06proto3"
 
@@ -135,19 +272,22 @@ func file_proto_helloworld_proto_rawDescGZIP() []byte {
 	return file_proto_helloworld_proto_rawDescData
 }
 
-var file_proto_helloworld_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_proto_helloworld_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_proto_helloworld_proto_goTypes = []any{
 	(*HelloRequest)(nil), // 0: helloworld.HelloRequest
 	(*HelloReply)(nil),   // 1: helloworld.HelloReply
+	(*Person)(nil),       // 2: helloworld.Person
+	(*PhoneNumber)(nil),  // 3: helloworld.PhoneNumber
 }
 var file_proto_helloworld_proto_depIdxs = []int32{
-	0, // 0: helloworld.Greeter.SayHello:input_type -> helloworld.HelloRequest
-	1, // 1: helloworld.Greeter.SayHello:output_type -> helloworld.HelloReply
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	3, // 0: helloworld.Person.phones:type_name -> helloworld.PhoneNumber
+	0, // 1: helloworld.Greeter.SayHello:input_type -> helloworld.HelloRequest
+	1, // 2: helloworld.Greeter.SayHello:output_type -> helloworld.HelloReply
+	2, // [2:3] is the sub-list for method output_type
+	1, // [1:2] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_proto_helloworld_proto_init() }
@@ -161,7 +301,7 @@ func file_proto_helloworld_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_helloworld_proto_rawDesc), len(file_proto_helloworld_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

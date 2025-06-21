@@ -1,0 +1,10 @@
+{
+  "email": "alice@example.com",
+  "id": 123,
+  "name": "Alice",
+  "phones": [
+    { "number": "123-456-7890", "type": "mobile" },
+    { "number": "987-654-3210", "type": "work" }
+  ],
+  "tags": ["engineer", "manager", "mentor"]
+}

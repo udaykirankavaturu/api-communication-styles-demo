@@ -19,6 +19,10 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 
 Make sure `$GOPATH/bin` is in your `PATH`.
 
+```
+export PATH="$PATH:$HOME/go/bin"
+```
+
 ---
 
 ## Setup & Run
@@ -26,7 +30,7 @@ Make sure `$GOPATH/bin` is in your `PATH`.
 ### 1. Clone and navigate into the project
 
 ```bash
-cd grpc_demo_go
+cd grpc_demo
 ```
 
 ### 2. Initialize Go module
